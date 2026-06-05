@@ -14,12 +14,11 @@
 #include <string>
 #include <time.h>
 
-// Se amplio respecto al ejemplo de clase porque ahora las respuestas incluyen
-// tablero completo, HUD y eventos; con 256 bytes se podian cortar mensajes.
+// Se amplio porque ahora las respuestas incluyen
+// tablero completo, HUD y eventos, con 256 bytes se podian cortar mensajes.
 #define MSG_SIZE 8192
 
-// Sigue siendo el paquete comun entre cliente y servidor, como en los ejemplos
-// de UDP/TCP. La diferencia esta en que se serializa a JSON antes de enviarlo.
+// Ahora se serializa a JSON antes de enviarlo.
 typedef class DataPacket {
 public:
     int client_id = 0;
@@ -31,7 +30,8 @@ public:
     DataPacket(int _client_id, int _sequence, std::string _msg) {
         client_id = _client_id;
         sequence = _sequence;
-        memset(msg, 0, MSG_SIZE);
+        //deep copy of string into the struct so that data reaches the server, NEVER send a pointer / shallow copy
+        memset(msg, 0, MSG_SIZE);//clear all the memory in packet.msg before copying a new msg
 
         const size_t copySize = (_msg.size() < MSG_SIZE - 1) ? _msg.size() : MSG_SIZE - 1;
         memcpy(msg, _msg.c_str(), copySize);

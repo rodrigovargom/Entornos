@@ -1,3 +1,2 @@
-﻿VideojuegoEntornosLib.lib(VideojuegoEntornosLib.obj) : error LNK2019: símbolo externo __std_search_1 sin resolver al que se hace referencia en la función "char const * __cdecl std::_Search_vectorized<char const ,char const >(char const * const,char const * const,char const * const,unsigned __int64)" (??$_Search_vectorized@$$CBD$$CBD@std@@YAPEBDQEBD00_K@Z)
-VideojuegoEntornosLib.lib(VideojuegoEntornosLib.obj) : error LNK2019: símbolo externo __std_find_end_1 sin resolver al que se hace referencia en la función "char const * __cdecl std::_Find_end_vectorized<char const ,char const >(char const * const,char const * const,char const * const,unsigned __int64)" (??$_Find_end_vectorized@$$CBD$$CBD@std@@YAPEBDQEBD00_K@Z)
-C:\Users\rodri\Desktop\VideojuegoEntornos\x64\Debug\VideojuegoEntornos.exe : fatal error LNK1120: 2 externos sin resolver
+﻿  VideojuegoEntornos.cpp
+  VideojuegoEntornos.vcxproj -> C:\Users\rodri\Desktop\TFG\Entornos\VideojuegoEntornos\x64\Debug\VideojuegoEntornos.exe
